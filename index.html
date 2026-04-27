@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RouteX Pixel Perfect</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Freckle+Face&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Malayalam:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+      html,
+      body {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        overflow-x: clip;
+      }
+      .nav-link:hover {
+        color: #422222;
+      }
+.gallery-img {
+  width: 100%;
+  height: 80px;        /* you can adjust (70–100px) */
+  object-fit: cover;   /* makes all images same size */
+}
+      /* HERO */
+      .home {
+        height: 100vh;
+        background: url("green-plane-ecofriendly-environment.jpg") center/cover
+          no-repeat;
+        position: relative;
+        width: 100%;
+      }
+      .home::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .home-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+      }
+.img1, .img2, .img3 {
+ padding-top: 50px;
+
+}
+      .about-left {
+        position: relative;
+        width: 500px;
+          max-width: 100%;
+        height: 600px;
+        margin-left: auto;
+      }
+
+      .img {
+        position: absolute;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+
+      .img1 {
+        width: 250px;
+        height: 350px;
+        top: 0;
+        left: 0; /* FIX */
+      }
+      .img2 {
+        width: 180px;
+        height: 200px;
+        top: 20px;
+        left: 270px;
+      }
+      .img3 {
+        width: 230px;
+        height: 250px;
+        top: 220px;
+        left: 160px;
+      }
+
+      .experience-box {
+        position: absolute;
+        top: 360px;
+        left: 180px;
+        width: 150px;
+        height: 150px;
+        background: #7ac943;
+        color: #fff;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .btn-success {
+        background: #7ac943;
+        border: none;
+        border-radius: 50px;
+      }
+      /* SERVICES */
+      .card-custom {
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        background: #fff;
+      }
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+}
+.social-icons a:hover {
+  color: #b0e808;
+}
+      /* RESPONSIVE FIXES */
+     @media (max-width: 992px) and (min-width: 768px) {
+.about {
+    padding-top: 30px;
+  }
+  .about-left {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-left: 0 !important;
+  }
+
+  .about-img-wrapper {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    
+  }
+
+  .img {
+    position: static;
+    width: 33.33%;
+    height: 220px; 
+    object-fit: cover;
+    padding: 0 !important; 
+  }
+
+  .img1, .img2, .img3 {
+    margin: 0; 
+  }
+
+  .experience-box {
+    display: none;
+  }
+}
+ 
+       
+
+      @media (max-width: 576px) {
+        .about-left {
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+        .copy-right a {
+          font-size: 10px;
+        }
+        .img1,
+        .img2,
+        .img3 {
+          display: none;
+        }
+
+        .experience-box {
+          position: static;
+          width: 200px;
+          height: 150px;
+          margin-top: 10px;
+        }
+
+        .home {
+          height: auto;
+          padding: 100px 0;
+        }
+      }
+      .about-img-wrapper {
+        overflow: hidden;
+      }
+      @media (max-width: 320px) {
+        .copy-right a {
+          font-size:9px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+      <div class="container">
+        <!-- LOGO -->
+
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <div class="bg-white p-1 rounded-2 me-2">
+            <img src="green-plane.webp" style="width: 30px; height: 30px" />
+          </div>
+          <span class="fw-bold" style="color: #034833">RouteX</span>
+        </a>
+
+        <!-- TOGGLER -->
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- NAV + RIGHT CONTENT -->
+        <div class="collapse navbar-collapse" id="nav">
+          <!-- MENU (center) -->
+          <ul class="navbar-nav mx-auto gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Story</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Visa</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+
+          <!-- RIGHT SIDE HELP -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <!-- ICON -->
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="
+                width: 45px;
+                height: 45px;
+                border: 2px solid #034833;
+                border-radius: 50%;
+              "
+            >
+              <i class="fas fa-comment-dots" style="color: #034833"></i>
+            </div>
+
+            <!-- TEXT -->
+            <div class="ms-2">
+              <small class="text-muted d-block">Need Help?</small>
+              <span class="fw-semibold" style="color: #034833"
+                >+1 234 567 890</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="home d-flex align-items-center">
+      <div class="container home-content">
+        <h1 class="display-3 fw-bold">Journey with Confidence</h1>
+        <h2 class="display-5">
+          <span style="color: #83cd20">Migrate</span> with Us
+        </h2>
+        <p class="col-lg-6 mx-auto">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        <button
+          class="btn rounded-pill px-4 "
+          style="background: #83cd20; color: white"
+        >
+          Learn More
+        </button>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <!-- ABOUT -->
+   <section class="about py-5" style="background: #f9f9f9;">
+  <div class="container">
+
+    <div class="row align-items-center g-4">
+
+      <!-- LEFT (Images) -->
+      <div class="col-lg-6">
+
+        <div class="position-relative mx-auto" style="max-width: 520px;">
+
+          <!-- Images grid (responsive safe) -->
+          <div class="row g-3">
+
+            <div class="col-6">
+              <img src="sec2img1.jpg" class="img-fluid rounded-3 w-100" style="height: 260px; object-fit: cover;">
+            </div>
+
+            <div class="col-6">
+              <img src="sec2img2.jpg" class="img-fluid rounded-3 w-100" style="height: 200px; object-fit: cover;">
+            </div>
+
+            <div class="col-12">
+              <img src="sec2img3.png" class="img-fluid rounded-3 w-100" style="height: 240px; object-fit: cover;">
+            </div>
+
+          </div>
+
+          <!-- Experience Box -->
+          <div class="position-absolute d-flex flex-column justify-content-center align-items-center text-white"
+               style="bottom: 20px; left: 20px; width: 140px; height: 140px; background: #7ac943; border-radius: 20px;">
+            <h2 class="mb-0">10+</h2>
+            <p class="mb-0 text-center" style="font-size: 14px; line-height: 1.2;">
+              Years Of<br>Experience
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT (Content) -->
+      <div class="col-lg-6">
+
+        <p class="fw-semibold mb-2 fs-5" style="color: #0f3d2e;">
+          ABOUT US ✈
+        </p>
+
+        <h2 class="fw-semibold mb-3" style="color: #0f3d2e;">
+          Unknown Wanderlust <br />
+          Your Journey into
+        </h2>
+
+        <p class="text-muted mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+          amet nunc. Duis egestas ac ante sed tincidunt.
+        </p>
+
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <p class="fw-semibold mb-1" style="color: #0f3d2e;">
+              <i class="bi bi-check2-circle me-1"></i> Safety Guides
+            </p>
+            <span class="text-muted small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </span>
+          </div>
+
+          <div class="col-md-6">
+            <p class="fw-semibold mb-1" style="color: #0f3d2e;">
+              <i class="bi bi-check2-circle me-1"></i> Passport Assistance
+            </p>
+            <span class="text-muted small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </span>
+          </div>
+
+        </div>
+
+        <button class="btn btn-success mt-4 px-4 rounded-pill">
+          Read More
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- SERVICES -->
+    <section class="py-5" style="background: #f3f5ef">
+      <div class="container">
+        <!-- HEADER -->
+        <div class="text-center mb-5">
+          <p class="fw-semibold" style="color: #0f3d2e; letter-spacing: 1px">
+            OUR SERVICES ✈
+          </p>
+          <h2 class="fw-bold" style="color: #0f3d2e">
+            Adventure Unleashed <br />
+            Discover Your Next
+          </h2>
+        </div>
+
+        <!-- CARDS -->
+        <div class="row g-4 justify-content-center">
+          <!-- CARD 1 -->
+          <div class="col-sm-10 col-md-6 col-lg-4 d-flex">
+            <div
+              class="card shadow-sm border-0 w-100 text-center p-4 rounded-4"
+            >
+              <div
+                class="mx-auto mb-3 d-flex align-items-center justify-content-center"
+                style="
+                  width: 70px;
+                  height: 70px;
+                  background: #7ac943;
+                  border-radius: 50%;
+                "
+              >
+                <i class="fas fa-globe text-white fs-4"></i>
+              </div>
+
+              <h5 class="fw-semibold" style="color: #0f3d2e">
+                Food and Wine Tours
+              </h5>
+              <p class="text-muted small">
+                Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus
+                nun Lorem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="col-sm-10 col-md-6 col-lg-4 d-flex">
+            <div
+              class="card shadow-sm border-0 w-100 text-center p-4 rounded-4"
+            >
+              <div
+                class="mx-auto mb-3 d-flex align-items-center justify-content-center"
+                style="
+                  width: 70px;
+                  height: 70px;
+                  background: #7ac943;
+                  border-radius: 50%;
+                "
+              >
+                <i class="fas fa-briefcase text-white fs-4"></i>
+              </div>
+
+              <h5 class="fw-semibold" style="color: #0f3d2e">
+                Travel Opportunities
+              </h5>
+              <p class="text-muted small">
+                Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus
+                nun Lorem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="col-sm-10 col-md-6 col-lg-4 d-flex">
+            <div
+              class="card shadow-sm border-0 w-100 text-center p-4 rounded-4"
+            >
+              <div
+                class="mx-auto mb-3 d-flex align-items-center justify-content-center"
+                style="
+                  width: 70px;
+                  height: 70px;
+                  background: #7ac943;
+                  border-radius: 50%;
+                "
+              >
+                <i class="fas fa-chart-line text-white fs-4"></i>
+              </div>
+
+              <h5 class="fw-semibold" style="color: #0f3d2e">
+                Solo Travel Planning
+              </h5>
+              <p class="text-muted small">
+                Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus
+                nun Lorem ipsum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+<footer style="background: #084031; color: #fff;">
+  <div class="container py-5">
+
+    <div class="row g-4">
+
+      <!-- Brand -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h3 class="fw-bold mb-3">RouteX</h3>
+
+        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 15px;">
+          Corporate business typically refers to large-scale enterprises or 
+          organizations built to deliver lasting value.
+        </p>
+
+        <div class="social-icons mt-3">
+          <a href="#" class="bi bi-facebook me-2"></a>
+          <a href="#" class="bi bi-instagram me-2"></a>
+          <a href="#" class="bi bi-pinterest me-2"></a>
+          <a href="#" class="bi bi-linkedin"></a>
+        </div>
+      </div>
+
+      <!-- Service Menu -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="fw-bold text-white mb-3">Service Menu</h5>
+
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <i class="bi bi-check2 me-1"></i>Mistakes To Avoid
+          </a></li>
+
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <i class="bi bi-check2 me-1"></i>Your Startup
+          </a></li>
+
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <i class="bi bi-check2 me-1"></i>Know About Fonts
+          </a></li>
+
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <i class="bi bi-check2 me-1"></i>Brand Identity
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="fw-bold text-white mb-3">Useful Links</h5>
+
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <span style="color:#b0e808;">❯</span> Latest News
+          </a></li>
+
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <span style="color:#b0e808;">❯</span> Careers
+          </a></li>
+
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <span style="color:#b0e808;">❯</span> General Inquiries
+          </a></li>
+
+          <li><a href="#" class="text-white text-decoration-none d-block py-1">
+            <span style="color:#b0e808;">❯</span> Case Studies
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Gallery -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="fw-bold text-white mb-3">Gallery</h5>
+
+        <div class="row g-2">
+          <div class="col-4"><img src="footerimg1.jfif" class="img-fluid rounded gallery-img"></div>
+          <div class="col-4"><img src="footerimg2.jfif" class="img-fluid rounded gallery-img"></div>
+          <div class="col-4"><img src="footerimg3.jfif" class="img-fluid rounded gallery-img"></div>
+          <div class="col-4"><img src="footerimg4.jfif" class="img-fluid rounded gallery-img"></div>
+          <div class="col-4"><img src="footerimg5.jfif" class="img-fluid rounded gallery-img"></div>
+          <div class="col-4"><img src="footerimg6.jfif" class="img-fluid rounded gallery-img"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div style="border-top: 1px solid rgba(255,255,255,0.2);" class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+
+      <p class="mb-0 small text-white-50 text-center text-md-start">
+        © RRDevs 2024 | All Rights Reserved
+      </p>
+
+      <div class="copy-right text-center text-md-end">
+        <a href="#" class="text-white-50 text-decoration-none ms-3 small">Terms & Conditions</a>
+        <a href="#" class="text-white-50 text-decoration-none ms-3 small">Privacy Policy</a>
+        <a href="#" class="text-white-50 text-decoration-none ms-3 small">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
